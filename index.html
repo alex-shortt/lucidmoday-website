@@ -3,37 +3,106 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/hover.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+    <script src="https://use.fontawesome.com/27cf0ad925.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://codepen.io/darrylhuffman/pen/zogYQW.js" type="text/javascript"></script>
+    <script src="js/hashchange.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </head>
 
 <body>
     <nav class="navbar" style="">
-        <img class="navbar-image" src="assets/lucidmonday.png" />
+        <a href="./index.html"><img class="navbar-image" src="assets/lucidmonday.png" /></a>
         <div class="navbar-buttonrow">
-            <button class="navbar-button">Hello</button>
-            <button class="navbar-button">Hi there</button>
-            <button class="navbar-button">About</button>
-            <button class="navbar-button">Shop</button>
-            <button class="navbar-button">Team</button>
-            <button class="navbar-button">Events</button>
+            <button id="button-home" class="navbar-button hvr-outline-out">Home</button>
+            <button id="button-releases" class="navbar-button hvr-outline-out">Releases</button>
+            <button id="button-artists" class="navbar-button hvr-outline-out">Artists</button>
+            <button id="button-about" class="navbar-button hvr-outline-out">About</button>
+            <button id="button-contact" class="navbar-button hvr-outline-out">Contact</button>
         </div>
     </nav>
-    
-    <div class="content-container">
-        &nbsp;
-        <br>
-        &nbsp;
-        <br>
-        &nbsp;
-        <br>
-        &nbsp;
-        <br>
+
+    <div id="content" class="content-container">
+        <div id="home" class="content-page home">
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> Home
+            <br> &nbsp;
+            <br> &nbsp;
+        </div>
+        <div id="releases" class="content-page releases">
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> Releases
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+        </div>
+        <div id="artists" class="content-page artists">
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> Artists
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+        </div>
+        <div id="about" class="content-page about">
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> About
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+        </div>
+        <div id="contact" class="content-page contact">
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> Contact
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+            <br> &nbsp;
+        </div>
+       
     </div>
-    
+
+    <div class="footer">
+        <h5 class="footer-text">&copy; 2017 Lucid Monday</h5>
+        <div class="footer-links">
+            <a class="fa fa-facebook-square footer-link" aria-hidden="true"></a>
+            <a class="fa fa-instagram footer-link" aria-hidden="true"></a>
+            <a class="fa fa-soundcloud footer-link" aria-hidden="true"></a>
+            <a class="fa fa-twitter footer-link" aria-hidden="true"></a>
+        </div>
+    </div>
+
+    <script>
+        initPage();
+        initHash();
+    </script>
 </body>
 
 </html>

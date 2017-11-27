@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@mixin lucidText() {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+$bg-color: #313030;
+
 .navbar {
-    padding: 10px !important;
-    background: transparent;
+    padding: 10px 0px !important;
+    //background: black;
     margin: auto;
     &-image {
-        width: calc(100% - 20px);
-        margin: 10px;
+        width: 100%;
+        margin: 10px 0px;
+        border: 4px solid white;
     }
     &-buttonrow {
         margin-top: 15px;
@@ -19,28 +29,71 @@
         border: none;
         transition: color .2s linear, background .2s linear;
         padding: 10px 0px;
-        margin: 5px;
-        border: 1px solid white;
+        margin: 5px 10px;
+        @include lucidText();
         &:hover {
             background: white;
-            color: black;
+            color: $bg-color;
+        }
+    }
+}
+
+.footer {
+    border: 4px solid white;
+    margin-top: 30px;
+    padding: 10px;
+    &-text {
+        @include lucidText();
+        color: white;
+        text-align: center;
+        margin: 5px;
+    }
+    &-links {
+        width: 27%;
+        margin: auto;
+        display: flex;
+    }
+    &-link {
+        flex: 1;
+        color: white !important;
+        font-size: 18pt !important;
+        text-align: center;
+        margin: 5px;
+        cursor: pointer;
+        transform: translateZ(0);
+        transition: color .2s linear, transform .2s linear;
+        &:hover {
+            transform: scale(1.3) translateZ(0);
         }
     }
 }
 
 .content {
     &-container {
-        margin: 15px;
-        width: calc(100% - 30px);
-        border: 1px solid white;
+        margin: 15px 0px;
+        width: 100%;
+        border: 4px solid white;
         transform-origin: top center;
+        transition: height 1s linear;
+        overflow: hidden;
+    }
+    &-page{
+        display: none;
+        color: white;
+    }
+}
+
+.hvr-outline-out {
+    &:before {
+        border-color: white !important;
     }
 }
 
 html,
 body {
-    overflow: hidden;
-    background: #43c2f3 !important;
+    background: $bg-color !important;
+    width: 85%;
+    margin: auto !important;
 }
 
 @keyframes close-content {
