@@ -14,11 +14,8 @@ function initHash() {
         case 'releases':
             _shutter.openContent("releases");
             break;
-        case 'artists':
-            _shutter.openContent("artists");
-            break;
-        case 'about':
-            _shutter.openContent("about");
+        case 'team':
+            _shutter.openContent("team");
             break;
         case 'contact':
             _shutter.openContent("contact");
@@ -44,14 +41,15 @@ function initPage() {
     $('#button-releases').click(function () {
         _shutter.closeContent("releases");
     });
-    $('#button-artists').click(function () {
-        _shutter.closeContent("artists");
-    });
-    $('#button-about').click(function () {
-        _shutter.closeContent("about");
+    $('#button-team').click(function () {
+        _shutter.closeContent("team");
     });
     $('#button-contact').click(function () {
         _shutter.closeContent("contact");
+    });
+    
+    $(window).resize(function(){
+        _shutter.autoAnimateHeight(1);
     });
 }
 
@@ -120,40 +118,42 @@ jQuery.fn.lucidinfo = function (opts) {
     var element = jQuery(this);
     var releases = [];
     var lucidmondayID = "203439010";
-    var artists = {
+    var team = {
         0: {
             "name": "Julius Woods",
-            "image_url": "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
+            "image_url": "https://scontent.fsnc1-1.fna.fbcdn.net/v/t1.0-9/14724571_1184160418317548_6931370145365755055_n.jpg?oh=e1456278fd0b7a25ee80e117d7961efc&oe=5A9FFAC3",
             "subtitle": "CEO",
-            "twitter": "https://google.com",
-            "soundcloud": "https://reddit.com"
+            "twitter": "https://twitter.com/julius_woods",
+            "soundcloud": "https://soundcloud.com/sui-luj",
+            "instagram": "https://www.instagram.com/juliuswulius/",
+            "image_css": ""
         },
         1: {
-            "name": "Alex Shortt",
-            "image_url": "https://i1.sndcdn.com/avatars-000301550219-7pwnww-t500x500.jpg",
-            "subtitle": "CTO",
-            socials: [
-                {
-                    "twitter": "https://google.com"
-                },
-                {
-                    "soundcloud": "https://reddit.com"
-                }
-            ]
+            "name": "Callahan",
+            "image_url": "https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/s640x640/sh0.08/e35/20066487_1716111388694697_8329369603440377856_n.jpg",
+            "subtitle": "COO",
+            "twitter": "https://twitter.com/cxllxhxn",
+            "soundcloud": "https://soundcloud.com/cxllxhxn",
+            "instagram": "https://www.instagram.com/calbailz/",
+            "image_css": "transform: scale(1.6);"
         },
         2: {
-            "name": "Benjamin Ha",
-            "image_url": "https://i1.sndcdn.com/avatars-000110611200-mpwk3i-t500x500.jpg",
-            "subtitle": "IDK",
-            "twitter": "https://google.com",
-            "soundcloud": "https://reddit.com"
+            "name": "Alex Shortt",
+            "image_url": "https://pbs.twimg.com/media/DOacgX2VQAAnQZr.jpg:large",
+            "subtitle": "CTO",
+            "twitter": "https://twitter.com/_alexshortt",
+            "soundcloud": "https://soundcloud.com/alex_shortt",
+            "instagram": "https://www.instagram.com/alexander.shortt/",
+            "image_css": "transform: translateY(-15%);"
         },
         3: {
-            "name": "Callahan",
-            "image_url": "https://i1.sndcdn.com/avatars-000110611200-mpwk3i-t500x500.jpg",
-            "subtitle": "ASDF",
-            "twitter": "https://google.com",
-            "soundcloud": "https://reddit.com"
+            "name": "Benjamin Ha",
+            "image_url": "https://pbs.twimg.com/profile_images/881094356710473730/6kivL7qp_400x400.jpg",
+            "subtitle": "CFO",
+            "twitter": "https://twitter.com/_benjaminha",
+            "soundcloud": "https://soundcloud.com/benjamin-ha-6",
+            "instagram": "https://www.instagram.com/_benjaminha/",
+            "image_css": ""
         }
     }
 
@@ -210,27 +210,27 @@ jQuery.fn.lucidinfo = function (opts) {
     }
 
     this.addTeam = function () {
-        var container = $("#artists-container");
-        for (obj in artists) {
+        var container = $("#team-container");
+        for (obj in team) {
             container.append('\
-            <div class="artists-grid-column">\
-                <div class="artists-grid-user">\
-                    <div class="artists-grid-user__avatar"><img src="' + artists[obj].image_url + '" /></div>\
-                    <div class="artists-grid-user__name">' + artists[obj].name + '</div>\
-                    <div class="artists-grid-user__title">' + artists[obj].subtitle + '</div>\
-                    <ul class="artists-grid-social">\
-                        <li class="artists-grid-social__item">\
-                            <a href="">\
+            <div class="team-grid-column">\
+                <div class="team-grid-user">\
+                    <div class="team-grid-user__avatar"><img style="' + team[obj].image_css + '" src="' + team[obj].image_url + '" /></div>\
+                    <div class="team-grid-user__name">' + team[obj].name + '</div>\
+                    <div class="team-grid-user__title">' + team[obj].subtitle + '</div>\
+                    <ul class="team-grid-social">\
+                        <li class="team-grid-social__item">\
+                            <a href="' + team[obj].twitter + '" class="fa fa-twitter" aria-hidden="true">\
                                         \
                             </a>\
                         </li>\
-                        <li class="artists-grid-social__item">\
-                            <a href="">\
+                        <li class="team-grid-social__item">\
+                            <a href="' + team[obj].instagram + '" class="fa fa-instagram" aria-hidden="true">\
                                         \
                             </a>\
                         </li>\
-                        <li class="artists-grid-social__item">\
-                            <a href="">\
+                        <li class="team-grid-social__item">\
+                            <a href="' + team[obj].soundcloud + '" class="fa fa-soundcloud" aria-hidden="true">\
                                         \
                             </a>\
                         </li>\
