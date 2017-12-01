@@ -36,6 +36,7 @@ function initPage() {
     _shutter = $("#content").shutter({});
     _lucidinfo = $("#content").lucidinfo({});
     _lucidinfo.updateInfo();
+    _lucidinfo.addTeam();
 
     $('#button-home').click(function () {
         _shutter.closeContent("");
@@ -76,8 +77,16 @@ jQuery.fn.shutter = function (opts) {
         }, 500);
     }
 
+    this.setButtonActive = function (link) {
+        $(".navbar-button").each(function (ind, obj) {
+            $(obj).removeClass("active");
+        });
+        $("#button-" + link).addClass("active");
+    }
+
     this.openContent = function (link) {
         this.setContent(link);
+        this.setButtonActive(link);
         this.autoAnimateHeight(500);
     }
 
@@ -111,7 +120,42 @@ jQuery.fn.lucidinfo = function (opts) {
     var element = jQuery(this);
     var releases = [];
     var lucidmondayID = "203439010";
-    var artistsUsernames = ['sui-luj', 'cxllxhxn', 'dilipvenkatesh', 'inimicvs', 'yugiboi', 'nicciwho', 'nohidea'];
+    var artists = {
+        0: {
+            "name": "Julius Woods",
+            "image_url": "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg",
+            "subtitle": "CEO",
+            "twitter": "https://google.com",
+            "soundcloud": "https://reddit.com"
+        },
+        1: {
+            "name": "Alex Shortt",
+            "image_url": "https://i1.sndcdn.com/avatars-000301550219-7pwnww-t500x500.jpg",
+            "subtitle": "CTO",
+            socials: [
+                {
+                    "twitter": "https://google.com"
+                },
+                {
+                    "soundcloud": "https://reddit.com"
+                }
+            ]
+        },
+        2: {
+            "name": "Benjamin Ha",
+            "image_url": "https://i1.sndcdn.com/avatars-000110611200-mpwk3i-t500x500.jpg",
+            "subtitle": "IDK",
+            "twitter": "https://google.com",
+            "soundcloud": "https://reddit.com"
+        },
+        3: {
+            "name": "Callahan",
+            "image_url": "https://i1.sndcdn.com/avatars-000110611200-mpwk3i-t500x500.jpg",
+            "subtitle": "ASDF",
+            "twitter": "https://google.com",
+            "soundcloud": "https://reddit.com"
+        }
+    }
 
     this.updateInfo = function (callback) {
         var url = "https://api.soundcloud.com/users/" + lucidmondayID + "/tracks?limit=10000&client_id=" + cid;
@@ -124,9 +168,7 @@ jQuery.fn.lucidinfo = function (opts) {
                 if (good) releases.push(obj);
                 //_lucidinfo.addTile(obj); _shutter.autoAnimateHeight(1);
             });
-            _lucidinfo.createReleasesGrid(); 
-            console.log(releases);
-            console.log(releases.length);
+            _lucidinfo.createReleasesGrid();
         });
 
         //loop through artistsUsernames and fill array with info on image, display name, bio, etc
@@ -137,7 +179,7 @@ jQuery.fn.lucidinfo = function (opts) {
         var titleText = obj.title;
         var artist = obj.title.split(" - ")[0];
         var title = obj.title.split(" - ")[1];
-        
+
         parent.append('\
             <div class="releases-tile">\
                     <img src="' + obj.artwork_url.replace("large", "t500x500") + '" />\
@@ -153,18 +195,51 @@ jQuery.fn.lucidinfo = function (opts) {
                     </div>\
                 </div>\
             ');
-        
+
     }
 
     this.createReleasesGrid = function () {
         var delay = 0;
         releases.forEach(function (obj, num) {
-            setTimeout(function(){
+            setTimeout(function () {
                 _lucidinfo.addTile(obj);
                 _shutter.autoAnimateHeight(0)
             }, delay);
-            if(delay < 150 * 9) delay += 150;
+            if (delay < 150 * 9) delay += 150;
         });
+    }
+
+    this.addTeam = function () {
+        var container = $("#artists-container");
+        for (obj in artists) {
+            container.append('\
+            <div class="artists-grid-column">\
+                <div class="artists-grid-user">\
+                    <div class="artists-grid-user__avatar"><img src="' + artists[obj].image_url + '" /></div>\
+                    <div class="artists-grid-user__name">' + artists[obj].name + '</div>\
+                    <div class="artists-grid-user__title">' + artists[obj].subtitle + '</div>\
+                    <ul class="artists-grid-social">\
+                        <li class="artists-grid-social__item">\
+                            <a href="">\
+                                        \
+                            </a>\
+                        </li>\
+                        <li class="artists-grid-social__item">\
+                            <a href="">\
+                                        \
+                            </a>\
+                        </li>\
+                        <li class="artists-grid-social__item">\
+                            <a href="">\
+                                        \
+                            </a>\
+                        </li>\
+                    </ul>\
+                </div>\
+            </div>\
+            ');
+        }
+        _shutter.autoAnimateHeight(1);
     }
 
     return this.initialize();
