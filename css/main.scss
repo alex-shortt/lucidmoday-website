@@ -167,6 +167,11 @@ $secondary-color: #c8c8c8;
         color: $highlite-color;
         text-align: center;
         @include lucidText();
+        text-transform: none;
+    }
+
+    &-header{
+        text-transform: uppercase;
     }
 }
 
