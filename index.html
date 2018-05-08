@@ -11,10 +11,11 @@
 
     <link rel="stylesheet" type="text/css" href="css/main.min.css">
     <link rel="stylesheet" type="text/css" href="css/hover.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
 
     <script src="https://use.fontawesome.com/27cf0ad925.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="https://codepen.io/darrylhuffman/pen/zogYQW.js" type="text/javascript"></script>
     <script src="js/hashchange.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
@@ -30,7 +31,6 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-97408879-5');
-
     </script>
 </head>
 
@@ -47,6 +47,19 @@
 
     <div id="content" class="content-container">
         <div id="home" class="content-page home">
+            <div class="home-row">
+                <div class="home-cell">
+                    <img class="home-image" src="./assets/lucid-denver.jpg" />
+                </div>
+                <div class="home-cell">
+                    <h2 class="home-text home-header">Mount Lucid</h2>
+                    <p class="home-text">Presented by Mount Vernon & Lucid Monday... Lege Kale, Ordnry Yngstr, Dilip, Sui.luj, and KMB! RSVP for the show below!
+                        <br />
+                        <br />
+                        <button class="home-button hvr-ripple-out" data-toggle="modal" data-target="#rsvp-modal">RSVP</button>
+                    </p>
+                </div>
+            </div>
             <div class="home-row">
                 <div class="home-cell">
                     <img class="home-image" src="./assets/lucid-denver.jpg" />
@@ -133,10 +146,36 @@
         </div>
     </div>
 
+    <div class="modal fade" id="rsvp-modal" tabindex="-1" role="dialog" aria-labelledby="rsvp-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content rsvp-content">
+                <div class="modal-header rsvp-header">
+                    <h5 class="modal-title" id="rsvp-modal-label">RSVP for Mount Lucid</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="rsvp-body" class="modal-body rsvp-body">
+                    <fieldset class="rsvp-fieldset">
+                        <label class="rsvp-label">Name</label>
+                        <input class="rsvp-input" id="rsvp-name" type="text" />
+                    </fieldset>
+                    <fieldset class="rsvp-fieldset">
+                        <label class="rsvp-label">Email</label>
+                        <input class="rsvp-input" id="rsvp-email" type="email" />
+                    </fieldset>
+                </div>
+                <div class="modal-footer rsvp-footer">
+                    <button type="button" class="btn rsvp-button rsvp-button-close hvr-outline-out" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn rsvp-button rsvp-button-submit hvr-outline-out" id="rsvp-submit">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         initPage();
         initHash();
-
     </script>
 </body>
 

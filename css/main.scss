@@ -9,7 +9,7 @@ $highlite-color: black;
 $secondary-color: #c8c8c8;
 
 .navbar {
-    padding: 10px 0 !important;
+    padding: 0 !important;
     //background: black;
     margin: auto;
 
@@ -116,7 +116,7 @@ $secondary-color: #c8c8c8;
         transition: height 0.5s linear;
         overflow: hidden;
         height: 0;
-        max-height: calc(100vh - 520px);
+        max-height: calc(100vh - 400px);
         overflow-y: auto;
     }
 
@@ -126,9 +126,86 @@ $secondary-color: #c8c8c8;
     }
 }
 
+.rsvp {
+    &-content {
+        border-radius: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    &-header {
+        background: white;
+        border-radius: 0 !important;
+        border: 2px solid black !important;
+    }
+
+    &-body {
+        background: white;
+        border-radius: 0 !important;
+        border: 2px solid black;
+        margin: 20px 0;
+    }
+
+    &-footer {
+        background: white;
+        border-radius: 0 !important;
+        border: 2px solid black !important;
+        justify-content: space-evenly !important;
+    }
+
+    &-fieldset {
+        margin: 10px;
+    }
+
+    &-label {
+        background: black;
+        color: white;
+        padding: 10px 15px;
+        width: 20%;
+        text-align: center;
+    }
+
+    &-input {
+        font-size: 1em;
+        padding: 8px 10px;
+        width: 79%;
+    }
+
+    &-button {
+        color: white;
+        background: black;
+        border: none;
+        border-radius: 0 !important;
+    }
+
+    &-error {
+        color: red;
+        text-align: center;
+        margin: 0;
+    }
+
+    &-success {
+        color: green;
+        text-align: center;
+        margin: 0;
+    }
+}
+
 .hvr-outline-out {
     &:before {
         border-color: $highlite-color !important;
+    }
+}
+
+.hvr-ripple-out {
+    &:before {
+        border: #0f1f55 solid 6px !important;
+    }
+}
+
+.hvr-underline-from-center {
+    &:before {
+        background: $bg-color !important;
     }
 }
 
@@ -170,8 +247,18 @@ $secondary-color: #c8c8c8;
         text-transform: none;
     }
 
-    &-header{
+    &-header {
         text-transform: uppercase;
+    }
+
+    &-button {
+        background: #0e1f55;
+        color: white;
+        padding: 5px 30px;
+        font-weight: bold;
+        font-size: 1.4em;
+        border: none;
+        cursor: pointer;
     }
 }
 
@@ -181,13 +268,14 @@ html {
     width: 85%;
     margin: auto !important;
     overflow: hidden;
-    padding: 15px;
+    height: 100%;
     @media (max-width: 1050px) {
         width: 100%;
     }
 }
 
 body {
+    padding: 0 15px;
     overflow: hidden;
 }
 @keyframes close-content {
