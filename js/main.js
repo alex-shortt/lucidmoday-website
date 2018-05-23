@@ -47,26 +47,9 @@ function initPage() {
     $('#button-contact').click(function() {
         _shutter.closeContent("contact");
     });
-    $("#rsvp-submit").click(function() {
-        const name = $("#rsvp-name").val();
-        const email = $("#rsvp-email").val();
-
-        $("#rsvp-error").remove();
-        $("#rsvp-success").remove();
-
-        setTimeout(function() {
-            if (name == "" || email == "") {
-                $("#rsvp-body").append('<p id="rsvp-error" class="rsvp-error">Fill in all fields...</p>');
-                return;
-            } else {
-                $("#rsvp-body").append('<p id="rsvp-success" class="rsvp-success">Sent! Thanks, ' + name + '.</p>');
-                $("#rsvp-name").val("");
-                $("#rsvp-email").val("");
-                return;
-            }
-        }, 300, name)
+    $("#tickets-mount").click(function() {
+        window.open("https://www.eventbrite.com/e/mount-lucid-tickets-46342613003");
     });
-
     $(window).resize(function() {
         _shutter.autoAnimateHeight(1);
     });

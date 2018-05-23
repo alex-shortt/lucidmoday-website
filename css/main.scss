@@ -116,78 +116,13 @@ $secondary-color: #c8c8c8;
         transition: height 0.5s linear;
         overflow: hidden;
         height: 0;
-        max-height: calc(100vh - 10vw - 300px);
+        max-height: calc(95vh - 10vw - 240px);
         overflow-y: auto;
     }
 
     &-page {
         display: none;
         color: $highlite-color;
-    }
-}
-
-.rsvp {
-    &-content {
-        border-radius: 0 !important;
-        background: transparent !important;
-        border: none !important;
-    }
-
-    &-header {
-        background: white;
-        border-radius: 0 !important;
-        border: 2px solid black !important;
-    }
-
-    &-body {
-        background: white;
-        border-radius: 0 !important;
-        border: 2px solid black;
-        margin: 20px 0;
-    }
-
-    &-footer {
-        background: white;
-        border-radius: 0 !important;
-        border: 2px solid black !important;
-        justify-content: space-evenly !important;
-    }
-
-    &-fieldset {
-        margin: 10px;
-    }
-
-    &-label {
-        background: black;
-        color: white;
-        padding: 10px 15px;
-        width: 20%;
-        text-align: center;
-    }
-
-    &-input {
-        font-size: 1em;
-        padding: 8px 10px;
-        width: 79%;
-    }
-
-    &-button {
-        color: white;
-        background: black;
-        border: none;
-        border-radius: 0 !important;
-    }
-
-    &-error {
-        color: red;
-        text-align: center;
-        margin: 0;
-    }
-
-    &-success {
-        color: green;
-        text-align: center;
-        margin: 0;
     }
 }
 
