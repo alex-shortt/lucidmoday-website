@@ -116,7 +116,7 @@ $secondary-color: #c8c8c8;
         transition: height 0.5s linear;
         overflow: hidden;
         height: 0;
-        max-height: calc(100vh - 400px);
+        max-height: calc(100vh - 10vw - 300px);
         overflow-y: auto;
     }
 
