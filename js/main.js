@@ -119,12 +119,12 @@ jQuery.fn.lucidinfo = function(opts) {
     },
     1: {
       "name": "Callahan",
-      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/e9f4b0fd480084bc10174fbb338affe9/5B5F3D7C/t51.2885-15/s640x640/sh0.08/e35/20066487_1716111388694697_8329369603440377856_n.jpg",
+      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/2fae909e92727426f37f08c804f5522e/5C08ECF3/t51.2885-15/sh0.08/e35/s640x640/31890418_592489991131155_6703278771673235456_n.jpg",
       "subtitle": "COO",
       "twitter": "https://twitter.com/cxllxhxn",
       "soundcloud": "https://soundcloud.com/cxllxhxn",
       "instagram": "https://www.instagram.com/calbailz/",
-      "image_css": "transform: scale(1.6) translateX(6px);-webkit-filter: grayscale(100%);filter: grayscale(100%);"
+      "image_css": "transform: scale(1.3) translateX(2px);-webkit-filter: grayscale(100%);filter: grayscale(100%);"
     },
     2: {
       "name": "Alex Shortt",
@@ -137,12 +137,12 @@ jQuery.fn.lucidinfo = function(opts) {
     },
     3: {
       "name": "Benjamin Ha",
-      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/3d113b2f83a8d02499db76680b1f5f2b/5B723422/t51.2885-19/s150x150/29738528_184573822347435_2023790256322510848_n.jpg",
+      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/b21381963427ab5aa32973697b554fbb/5BD88F4C/t51.2885-15/sh0.08/e35/s640x640/20633978_101478907238454_6036685265920065536_n.jpg",
       "subtitle": "CFO",
       "twitter": "https://twitter.com/_benjaminha",
       "soundcloud": "https://soundcloud.com/benjamin-ha-6",
       "instagram": "https://www.instagram.com/_benjaminha/",
-      "image_css": "transform: scale(1.2) translateX(7px) translateY(7px);"
+      "image_css": "transform: scale(1.6) translateX(-4px) translateY(7px);-webkit-filter: grayscale(100%);filter: grayscale(100%);"
     }
   }
 
