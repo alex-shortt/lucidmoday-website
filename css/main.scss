@@ -1,3 +1,5 @@
+//asdf
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 @mixin lucidText() {
   font-family: 'Roboto', sans-serif;
@@ -139,6 +141,12 @@ $secondary-color: #c8c8c8;
 }
 
 .home {
+  &.open {
+    display: block;
+  }
+}
+
+.events {
   &.open {
     display: block;
   }

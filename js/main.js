@@ -11,6 +11,9 @@ function initHash() {
       case 'blank':
         _shutter.openContent("home");
         break;
+      case 'events':
+        _shutter.openContent("events");
+        break;
       case 'releases':
         _shutter.openContent("releases");
         break;
@@ -33,6 +36,9 @@ function initPage() {
 
   $('#button-home').click(function() {
     _shutter.closeContent("");
+  });
+  $('#button-events').click(function() {
+    _shutter.closeContent("events");
   });
   $('#button-releases').click(function() {
     _shutter.closeContent("releases");
@@ -109,13 +115,11 @@ jQuery.fn.lucidinfo = function(opts) {
         releases.forEach(function(obj2, ind2) {
           if (obj.id == obj2.id)
             good = false;
-          }
-        );
+        });
         if (good)
           releases.push(obj);
-          //_lucidinfo.addTile(obj); _shutter.autoAnimateHeight(1);
-        }
-      );
+        //_lucidinfo.addTile(obj); _shutter.autoAnimateHeight(1);
+      });
       _lucidinfo.createReleasesGrid();
     });
 
@@ -133,13 +137,13 @@ jQuery.fn.lucidinfo = function(opts) {
                     <img src="' + obj.artwork_url.replace("large", "t500x500") + '" />\
                     <div class="releases-text">\
                         <h2 style="' + (
-      artist == null
-      ? "display:none"
-      : '') + '">' + artist + '</h2>\
+      artist == null ?
+      "display:none" :
+      '') + '">' + artist + '</h2>\
                         <h3 style="' + (
-      title == null
-      ? "display:none"
-      : '') + '">' + title + '</h3>\
+      title == null ?
+      "display:none" :
+      '') + '">' + title + '</h3>\
                         <p id="track-' + obj.id + '" class="releases-animate-text">' + obj.description + '</p>\
                     </div>\
                     <div class="releases-dots">\
@@ -160,8 +164,7 @@ jQuery.fn.lucidinfo = function(opts) {
       }, delay);
       if (delay < 150 * 9)
         delay += 150;
-      }
-    );
+    });
   }
 
   return this.initialize();
