@@ -14,9 +14,6 @@ function initHash() {
       case 'releases':
         _shutter.openContent("releases");
         break;
-      case 'team':
-        _shutter.openContent("team");
-        break;
       case 'contact':
         _shutter.openContent("contact");
         break;
@@ -33,16 +30,12 @@ function initPage() {
   _shutter = $("#content").shutter({});
   _lucidinfo = $("#content").lucidinfo({});
   _lucidinfo.updateInfo();
-  _lucidinfo.addTeam();
 
   $('#button-home').click(function() {
     _shutter.closeContent("");
   });
   $('#button-releases').click(function() {
     _shutter.closeContent("releases");
-  });
-  $('#button-team').click(function() {
-    _shutter.closeContent("team");
   });
   $('#button-contact').click(function() {
     _shutter.closeContent("contact");
@@ -107,44 +100,6 @@ jQuery.fn.lucidinfo = function(opts) {
   var element = jQuery(this);
   var releases = [];
   var lucidmondayID = "203439010";
-  var team = {
-    0: {
-      "name": "Julius Woods",
-      "image_url": "https://scontent-lax3-1.cdninstagram.com/vp/bf65be16ca9b423709bf2c460c71be3b/5C46F973/t51.2885-15/sh0.08/e35/s640x640/32083382_1692628867485555_14658276704649216_n.jpg",
-      "subtitle": "CEO",
-      "twitter": "https://twitter.com/julius_woods",
-      "soundcloud": "https://soundcloud.com/sui-luj",
-      "instagram": "https://www.instagram.com/juliuswulius/",
-      "image_css": "-webkit-filter: grayscale(100%);filter: grayscale(100%);"
-    },
-    1: {
-      "name": "Callahan",
-      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/2fae909e92727426f37f08c804f5522e/5C08ECF3/t51.2885-15/sh0.08/e35/s640x640/31890418_592489991131155_6703278771673235456_n.jpg",
-      "subtitle": "COO",
-      "twitter": "https://twitter.com/cxllxhxn",
-      "soundcloud": "https://soundcloud.com/cxllxhxn",
-      "instagram": "https://www.instagram.com/calbailz/",
-      "image_css": "transform: scale(1.3) translateX(2px);-webkit-filter: grayscale(100%);filter: grayscale(100%);"
-    },
-    2: {
-      "name": "Alex Shortt",
-      "image_url": "https://scontent-lax3-1.cdninstagram.com/vp/8be15e7eec3531abb41be299a5f2fe98/5C3EF107/t51.2885-19/s320x320/40843807_401757470356246_19285996591906816_n.jpg",
-      "subtitle": "CTO",
-      "twitter": "https://twitter.com/_alexshortt",
-      "soundcloud": "https://soundcloud.com/alex_shortt",
-      "instagram": "https://www.instagram.com/alexander.shortt/",
-      "image_css": "-webkit-filter: grayscale(100%);filter: grayscale(100%);"
-    },
-    3: {
-      "name": "Benjamin Ha",
-      "image_url": "https://scontent-sjc3-1.cdninstagram.com/vp/b21381963427ab5aa32973697b554fbb/5BD88F4C/t51.2885-15/sh0.08/e35/s640x640/20633978_101478907238454_6036685265920065536_n.jpg",
-      "subtitle": "CFO",
-      "twitter": "https://twitter.com/_benjaminha",
-      "soundcloud": "https://soundcloud.com/benjamin-ha-6",
-      "instagram": "https://www.instagram.com/_benjaminha/",
-      "image_css": "transform: scale(1.6) translateX(-4px) translateY(7px);-webkit-filter: grayscale(100%);filter: grayscale(100%);"
-    }
-  }
 
   this.updateInfo = function(callback) {
     var url = "https://api.soundcloud.com/users/" + lucidmondayID + "/tracks?limit=10000&client_id=" + cid;
@@ -207,38 +162,6 @@ jQuery.fn.lucidinfo = function(opts) {
         delay += 150;
       }
     );
-  }
-
-  this.addTeam = function() {
-    var container = $("#team-container");
-    for (obj in team) {
-      container.append('\
-            <div class="team-grid-column">\
-                <div class="team-grid-user">\
-                    <div class="team-grid-user__avatar"><img style="' + team[obj].image_css + '" src="' + team[obj].image_url + '" /></div>\
-                    <div class="team-grid-user__name">' + team[obj].name + '</div>\
-                    <div class="team-grid-user__title">' + team[obj].subtitle + '</div>\
-                    <ul class="team-grid-social">\
-                        <li class="team-grid-social__item">\
-                            <a href="' + team[obj].twitter + '" class="fa fa-twitter" aria-hidden="true">\
-                                        \
-                            </a>\
-                        </li>\
-                        <li class="team-grid-social__item">\
-                            <a href="' + team[obj].instagram + '" class="fa fa-instagram" aria-hidden="true">\
-                                        \
-                            </a>\
-                        </li>\
-                        <li class="team-grid-social__item">\
-                            <a href="' + team[obj].soundcloud + '" class="fa fa-soundcloud" aria-hidden="true">\
-                                        \
-                            </a>\
-                        </li>\
-                    </ul>\
-                </div>\
-            </div>\
-            ');
-    }
   }
 
   return this.initialize();
