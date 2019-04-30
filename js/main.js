@@ -49,6 +49,12 @@ function initPage() {
   $("#tickets-mount").click(function() {
     window.open("https://www.eventbrite.com/e/mount-lucid-tickets-46342613003");
   });
+  $("#tickets-wasted-ga").click(function() {
+    window.open("https://tinyurl.com/y24faasc");
+  });
+  $("#tickets-wasted-vip").click(function() {
+    window.open("https://tinyurl.com/y6c83s9f");
+  });
 }
 
 jQuery.fn.shutter = function(opts) {
